@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="/css/login-signup.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <!-- js Cookie -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
+    <!-- favicon -->
+    <link rel="icon" href="/images/o-solid.png">
+</head>
+<body>
+<script th:inline="javascript" src="/js/login-signup.js"></script>
+<script src="/js/utils.js"></script>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <div class="login-form">
+            <h1>회원가입</h1>
+            <div class="social-container"></div>
+            <span>or use your email for registration</span>
+            <input type="email" id="signup-email" placeholder="Email"/>
+            <input type="password" id="signup-password" placeholder="Password"/>
+            <input type="text" id="signup-nickname" placeholder="NickName"/>
+            <button id="signup-button">Sign Up</button>
+        </div>
+    </div>
+    <div class="form-container sign-in-container">
+        <div class="login-form">
+            <h1>로그인</h1>
+            <div class="social-container">
+                <a th:href="@{'https://kauth.kakao.com/oauth/authorize?client_id=' + ${@environment.getProperty('oauth.kakao.client-id')} + '&redirect_uri=http://localhost:8080/okw/oauths/callback/kakao&response_type=code'}"
+                   style="background-image: url('/images/kakaotalk_sharing_btn_small.png')"></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" id="login-email" placeholder="Email"/>
+            <input type="password" id="login-password" placeholder="Password"/>
+            <button id="login-button">LogIn</button>
+        </div>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>OKOWAN</h1>
+                <p>로그인을 하시려면 아래의 버튼을 눌러주세요!</p>
+                <button class="ghost" id="signIn">로그인</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>OKOWAN</h1>
+                <p>회원가입을 하시려면 아래의 버튼을 눌러주세요!</p>
+                <button class="ghost" id="signUp">회원가입</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>
+        Created with <i class="fa fa-heart"></i> by
+        <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+        - Read how I created this and how you can join the challenge
+        <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+    </p>
+</footer>
+</body>
+</html>
