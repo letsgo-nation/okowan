@@ -39,6 +39,7 @@
 ## 프로젝트 설계
 |     설계       | 결과                                                                    |
 |:-------------:|-----------------------------------------------------------------------|
-|ERD 설계        | <a href="https://www.erdcloud.com/d/ZKHpXipHNBcZBqPoS">OKOWAN ERD</a> |
 |API 설계        | <a href="https://jcm97.gitbook.io/tellro-project/">OKOWAN APIs</a>|
 
+<h3> ERD </h3>
+<img src="https://drive.google.com/uc?id=1kuAQ1B82PH7wxo2H72-8Eot5hW2aJp95" />
